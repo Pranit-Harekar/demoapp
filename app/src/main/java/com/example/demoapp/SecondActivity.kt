@@ -2,7 +2,9 @@ package com.example.demoapp
 
 import android.os.Bundle
 import android.webkit.WebView
+import android.webkit.WebViewClient
 import androidx.appcompat.app.AppCompatActivity
+
 
 class SecondActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -10,6 +12,8 @@ class SecondActivity : AppCompatActivity() {
         setContentView(R.layout.activity_second)
 
         val myWebView = findViewById<WebView>(R.id.webview)
-        myWebView.loadUrl("https://www.mozilla.org/")
+        myWebView.webViewClient = WebViewClient()
+        myWebView.settings.javaScriptEnabled = true
+        myWebView.loadUrl("https://www.mozilla.org")
     }
 }
